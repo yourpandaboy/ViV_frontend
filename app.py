@@ -8,7 +8,24 @@ st.title("ViV")
 st.header("Vibe, Interact, Live!")
 st.write("Using Machine Learning to Find the Top Dating Profiles for you")
 
-"""### gif hello"""
+#background image
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+    st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+        background-size: cover
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+add_bg_from_local('images/panda-sweet.jpg')
+
+#"""### gif hello"""
 file_ = open("images/cinnamo-hello.gif", "rb")
 contents = file_.read()
 data_url = base64.b64encode(contents).decode("utf-8")
