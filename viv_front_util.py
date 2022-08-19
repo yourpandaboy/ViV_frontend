@@ -46,6 +46,6 @@ class ViV():
 
 
 if __name__ == '__main__':
-    viv1 = ViV('apple',"Im tony im so cute and i want cute girls", 20, 'single', 12, 26, 'female', 'single')
+    viv1 = ViV('apple',"hi mizuki i like to workout and dance like a cowboy grinding at the club. i want some baddie girls", 20, 'single', 18, 30, 'female', 'single')
     results = viv1.predict_model()
     print(results)
