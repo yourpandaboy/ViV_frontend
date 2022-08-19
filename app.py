@@ -1,6 +1,7 @@
 from hashlib import new
 import pandas as pd
 import streamlit as st
+import base64
 from viv_front_util import ViV
 
 st.title("ViV")
