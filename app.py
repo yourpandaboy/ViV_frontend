@@ -16,14 +16,14 @@ def add_bg_from_local(image_file):
     f"""
     <style>
     .stApp {{
-        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+        background-image: url(data:image/{"jpg"};base64,{encoded_string.decode()});
         background-size: cover
     }}
     </style>
     """,
     unsafe_allow_html=True
     )
-add_bg_from_local('images/panda-sweet.jpg')
+add_bg_from_local('images/panda-sweet-small.jpg')
 
 #"""### gif hello"""
 file_ = open("images/cinnamo-hello.gif", "rb")
