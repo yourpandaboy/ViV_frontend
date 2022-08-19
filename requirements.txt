@@ -30,4 +30,3 @@ termcolor
 
 #frontend
 streamlit
-base64

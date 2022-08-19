@@ -1,36 +1,15 @@
 from hashlib import new
 import pandas as pd
 import streamlit as st
-import base64
 from viv_front_util import ViV
 
 st.title("ViV")
 st.header("Vibe, Interact, Live!")
 st.write("Using Machine Learning to Find the Top Dating Profiles for you")
 
-#gif hello
 
-"""### gif hello"""
-file_ = open("images/cinnamo-hello.gif", "rb")
-contents = file_.read()
-data_url = base64.b64encode(contents).decode("utf-8")
-file_.close()
 
-st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
-    unsafe_allow_html=True,
-)
 
-"""### gif wiggle"""
-file_ = open("images/wiggle.gif", "rb")
-contents = file_.read()
-data_url = base64.b64encode(contents).decode("utf-8")
-file_.close()
-
-st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
-    unsafe_allow_html=True,
-)
 
 with st.expander("See what's inside ViV!"):
     st.write("""
