@@ -37,8 +37,6 @@ st.markdown(
 )
 
 
-
-
 with st.expander("See what's inside ViV!"):
     st.write("""
         This is for ViV's description
