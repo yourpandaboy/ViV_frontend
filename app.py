@@ -20,11 +20,6 @@ st.markdown(
     """,
     unsafe_allow_html=True)
 
-st.title("ViV")
-st.header("Vibe, Interact, Live!")
-st.write("Using Machine Learning to Find the Top Dating Profiles for you")
-
-
 #background image
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
@@ -34,24 +29,19 @@ def add_bg_from_local(image_file):
     <style>
     .stApp {{
         background-image: url(data:image/{"jpg"};base64,{encoded_string.decode()});
-        background-size: cover
+        background-size: auto
     }}
     </style>
     """,
     unsafe_allow_html=True
     )
-add_bg_from_local('images/panda-sweet-croped.jpg')
+add_bg_from_local('images/panda-medium.jpg')
 
-
-with st.expander("See what's inside ViV!"):
-    st.write("""
-        This is for ViV's description
-    """)
 
 # Instantiating a new user DF
 new_profile = pd.DataFrame(columns=['Name','Bio','Age','Status','Sex','Location']
                            )
-row1_1, row1_2 = st.columns((0.4,1))
+row1_1, row1_2 = st.columns((0.4,1)) #instantiate row 1
 
 with row1_1:
     #"""### gif hello"""
@@ -64,16 +54,23 @@ with row1_1:
         f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
         unsafe_allow_html=True,
     )
-row1_2.title('ViV: Vibe, Interact, Live!')
-row1_2.write(
-"""ViV uses her vibez-tingle to scan your bio and return you your best matches!
-""")
+
+with row1_2:
+    row1_2.title('ViV: Vibe, Interact, Live!')
+    row1_2.write(
+    """ViV uses her vibez-tingle to scan your bio and return you your best matches!
+    """)
+
+with st.expander("See what's inside ViV!"):
+    st.write("""
+        This is for ViV's description
+    """)
 
 # ---------------------------
 #        User Input
 # ---------------------------
 
-row2_1 , row2_2 = st.columns((1,1))
+row2_1 , row2_2 = st.columns((1,1)) #instantiate row 2
 
 with row2_1:
     name = st.text_input("Enter your name: ")
@@ -85,11 +82,11 @@ with row2_1:
     status = st.selectbox(
                     'Choose your relationship status',
                     ('--','Single', 'In a relationship', 'Married'))
-    location = st.text_input("Enter your location: ")
+
 
 with row2_2:
     bio = st.text_area("Enter a Bio for yourself: ")
-
+    location = st.text_input("Enter your location: ")
 
 new_profile_dict = {'Name':[name],
                     'Bio':[bio],
@@ -99,30 +96,38 @@ new_profile_dict = {'Name':[name],
                     'Location':[location]}
 
 new_profile = new_profile_dict
-st.write(pd.DataFrame(new_profile))
+
+# ---------------------------
+#        User Preference
+# ---------------------------
+
+st.markdown("""<hr style="height:4px;border:none;color:#161F6D;background-color:#161F6D;" /> """, unsafe_allow_html=True)
 
 # Instantiating a new user preference DF to use as a filter later
 preference_df = pd.DataFrame(columns= ['Age_start','Age_end','Status','Sex'])
-
 st.header("Tell ViV your preference!")
 
-a,b = st.slider(
-     'Prefered ages',
-     18, 70, (18, 25))
 
-st.write('Your prefered ages:', a)
-st.write('Your prefered ages:', b)
+row3_1 , row3_2 = st.columns((1,1)) #instantiate row 3
 
-a= int(a)
-b= int(b)
+with row3_1:
+    a,b = st.slider(
+            'Prefered ages',
+            18, 100, (18, 25))
 
-c = st.selectbox(
-'Your prefered status you want to meet',
-('--','Single', 'In a relationship', 'Married'))
+# st.write('Your prefered ages:', a)
+# st.write('Your prefered ages:', b)
+    a= int(a)
+    b= int(b)
 
-d = st.selectbox(
-'Your prefered gender you want to meet',
-('--','Male', 'Female', 'Others'))
+with row3_2:
+    c = st.selectbox(
+        'Your prefered status you want to meet',
+        ('--','Single', 'In a relationship', 'Married'))
+
+    d = st.selectbox(
+        'Your prefered gender you want to meet',
+        ('--','Male', 'Female', 'Others'))
 
 preference_dict = {'Age_start': [a],
                    'Age_end':[b],
@@ -131,9 +136,16 @@ preference_dict = {'Age_start': [a],
 
 user = ViV(name,bio,age,status,a,b,d,c)
 
-if st.button('ViV Me!'):
+# ---------------------------
+#        Run model
+# ---------------------------
 
+
+start_execution = st.button('ViV Me!')
+if start_execution:
+    gif_runner = st.image('images/wiggle.gif')
     result = user.predict_model()
+    gif_runner.empty()
     st.write(result)
 # preference_df= a,b,c,d
 
