@@ -1,6 +1,6 @@
 from hashlib import new
 import streamlit as st
-from st_aggrid import AgGrid
+#from st_aggrid import AgGrid
 #config page
 st.set_page_config(
     page_title='ViV: Vibe, Interact, Live!',
@@ -147,8 +147,10 @@ if start_execution:
     gif_runner = st.image('images/wiggle.gif')
     result = user.predict_model()
     gif_runner.empty()
+    gif_runner.empty()
+    gif_runner.empty()
     st.write(result)
-    AgGrid(result)
+    #AgGrid(result)
 # preference_df= a,b,c,d
 
 # st.write(pd.DataFrame(preference_dict))
