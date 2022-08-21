@@ -8,6 +8,8 @@ st.title("ViV")
 st.header("Vibe, Interact, Live!")
 st.write("Using Machine Learning to Find the Top Dating Profiles for you")
 
+#config page
+st.set_page_config(page_title='ViV', page_icon='🐼')
 #background image
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
@@ -23,7 +25,7 @@ def add_bg_from_local(image_file):
     """,
     unsafe_allow_html=True
     )
-add_bg_from_local('images/panda-sweet-small.jpg')
+add_bg_from_local('images/panda-sweet-croped.jpg')
 
 #"""### gif hello"""
 file_ = open("images/cinnamo-hello.gif", "rb")
