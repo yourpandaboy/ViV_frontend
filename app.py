@@ -1,6 +1,8 @@
 from hashlib import new
-import pandas as pd
 import streamlit as st
+#config page
+st.set_page_config(page_title='ViV', page_icon='🐼')
+import pandas as pd
 import base64
 from viv_front_util import ViV
 
@@ -8,8 +10,7 @@ st.title("ViV")
 st.header("Vibe, Interact, Live!")
 st.write("Using Machine Learning to Find the Top Dating Profiles for you")
 
-#config page
-st.set_page_config(page_title='ViV', page_icon='🐼')
+
 #background image
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
