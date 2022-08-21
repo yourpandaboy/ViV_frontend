@@ -58,10 +58,12 @@ with row1_1:
 
 with row1_2:
     row1_2.title('ViV: Vibe, Interact, Live!')
-    row1_2.write(
+    row1_2.subheader(
     """ViV uses her vibez-tingle to scan your bio and return you your best matches!
     """)
+    row1_2.write('**Created by Norty Nakagawa & friends! Connect with me on [github](https://github.com/yourpandaboy) and [linkedin](https://www.linkedin.com/in/norutado-nakagawa/)**')
 
+# model info
 with st.expander("See what's inside ViV!"):
     st.write("""
         This is for ViV's description
@@ -145,12 +147,8 @@ user = ViV(name,bio,age,status,a,b,d,c)
 start_execution = st.button('ViV Me!')
 if start_execution:
     gif_runner = st.image('images/wiggle.gif')
-    gif_runner1 = st.image('images/wiggle.gif')
-    gif_runner2 = st.image('images/wiggle.gif')
     result = user.predict_model()
     gif_runner.empty()
-    gif_runner1.empty()
-    gif_runner2.empty()
     st.write(result)
     #AgGrid(result)
 # preference_df= a,b,c,d
