@@ -1,5 +1,6 @@
 from hashlib import new
 import streamlit as st
+from st_aggrid import AgGrid
 #config page
 st.set_page_config(
     page_title='ViV: Vibe, Interact, Live!',
@@ -29,7 +30,7 @@ def add_bg_from_local(image_file):
     <style>
     .stApp {{
         background-image: url(data:image/{"jpg"};base64,{encoded_string.decode()});
-        background-size: auto
+        background-size: 100% 100%
     }}
     </style>
     """,
@@ -147,6 +148,7 @@ if start_execution:
     result = user.predict_model()
     gif_runner.empty()
     st.write(result)
+    AgGrid(result)
 # preference_df= a,b,c,d
 
 # st.write(pd.DataFrame(preference_dict))
