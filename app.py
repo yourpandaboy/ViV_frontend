@@ -1,10 +1,24 @@
 from hashlib import new
 import streamlit as st
 #config page
-st.set_page_config(page_title='ViV', page_icon='🐼')
+st.set_page_config(
+    page_title='ViV: Vibe, Interact, Live!',
+    page_icon='🐼',
+    layout = 'wide')
+
 import pandas as pd
 import base64
 from viv_front_util import ViV
+
+# Remove the menu button and footer note from Streamlit
+st.markdown(
+    """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    """,
+    unsafe_allow_html=True)
 
 st.title("ViV")
 st.header("Vibe, Interact, Live!")
@@ -28,40 +42,54 @@ def add_bg_from_local(image_file):
     )
 add_bg_from_local('images/panda-sweet-croped.jpg')
 
-#"""### gif hello"""
-file_ = open("images/cinnamo-hello.gif", "rb")
-contents = file_.read()
-data_url = base64.b64encode(contents).decode("utf-8")
-file_.close()
-
-st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
-    unsafe_allow_html=True,
-)
-
 
 with st.expander("See what's inside ViV!"):
     st.write("""
         This is for ViV's description
     """)
 
-
-
 # Instantiating a new user DF
 new_profile = pd.DataFrame(columns=['Name','Bio','Age','Status','Sex','Location']
                            )
-# Asking for new profile data
-name = st.text_input("Enter your name: ")
-bio = st.text_area("Enter a Bio for yourself: ")
-age = st.number_input("What is your age?", 18, 120)
-age = int(age)
-status = st.selectbox(
-'Choose your relationship status',
-('--','Single', 'In a relationship', 'Married'))
-sex = st.selectbox(
-'Choose your gender',
-('--','Male', 'Female', 'Others'))
-location = st.text_input("Enter your location: ")
+row1_1, row1_2 = st.columns((0.4,1))
+
+with row1_1:
+    #"""### gif hello"""
+    file_ = open("images/cinnamo-hello.gif", "rb")
+    contents = file_.read()
+    data_url = base64.b64encode(contents).decode("utf-8")
+    file_.close()
+
+    st.markdown(
+        f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+        unsafe_allow_html=True,
+    )
+row1_2.title('ViV: Vibe, Interact, Live!')
+row1_2.write(
+"""ViV uses her vibez-tingle to scan your bio and return you your best matches!
+""")
+
+# ---------------------------
+#        User Input
+# ---------------------------
+
+row2_1 , row2_2 = st.columns((1,1))
+
+with row2_1:
+    name = st.text_input("Enter your name: ")
+    age = st.number_input("What is your age?", 18, 120)
+    age = int(age)
+    sex = st.selectbox(
+                    'Choose your gender',
+                    ('--','Male', 'Female', 'Others'))
+    status = st.selectbox(
+                    'Choose your relationship status',
+                    ('--','Single', 'In a relationship', 'Married'))
+    location = st.text_input("Enter your location: ")
+
+with row2_2:
+    bio = st.text_area("Enter a Bio for yourself: ")
+
 
 new_profile_dict = {'Name':[name],
                     'Bio':[bio],
