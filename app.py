@@ -30,20 +30,19 @@ def add_bg_from_local(image_file):
     <style>
     .stApp {{
         background-image: url(data:image/{"jpg"};base64,{encoded_string.decode()});
-        background-size: contain;
-        background-repeat: no-repeat
+        background-size: cover
     }}
     </style>
     """,
     unsafe_allow_html=True
     )
-add_bg_from_local('images/panda-medium.jpg')
+add_bg_from_local('images/panda-sweet-croped.jpg')
 
 
 # Instantiating a new user DF
 new_profile = pd.DataFrame(columns=['Name','Bio','Age','Status','Sex','Location']
                            )
-row1_1, row1_2 = st.columns((0.4,1)) #instantiate row 1
+row1_1, row1_2 = st.columns((0.4,0.4)) #instantiate row 1
 
 with row1_1:
     #"""### gif hello"""
@@ -146,10 +145,12 @@ user = ViV(name,bio,age,status,a,b,d,c)
 start_execution = st.button('ViV Me!')
 if start_execution:
     gif_runner = st.image('images/wiggle.gif')
+    gif_runner1 = st.image('images/wiggle.gif')
+    gif_runner2 = st.image('images/wiggle.gif')
     result = user.predict_model()
     gif_runner.empty()
-    gif_runner.empty()
-    gif_runner.empty()
+    gif_runner1.empty()
+    gif_runner2.empty()
     st.write(result)
     #AgGrid(result)
 # preference_df= a,b,c,d
