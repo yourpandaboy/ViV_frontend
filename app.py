@@ -52,8 +52,8 @@ new_profile = pd.DataFrame(columns=['Name','Bio','Age','Status','Sex','Location'
                            )
 # Asking for new profile data
 name = st.text_input("Enter your name: ")
-bio = st.text_input("Enter a Bio for yourself: ")
-age = st.slider("What is your age?", 18, 70)
+bio = st.text_area("Enter a Bio for yourself: ")
+age = st.number_input("What is your age?", 18, 120)
 age = int(age)
 status = st.selectbox(
 'Choose your relationship status',
