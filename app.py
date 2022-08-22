@@ -36,7 +36,7 @@ def add_bg_from_local(image_file):
     """,
     unsafe_allow_html=True
     )
-add_bg_from_local('images/panda-sweet-tony.jpg')
+add_bg_from_local('images/panda-sweet-dark.jpg')
 
 
 # Instantiating a new user DF
