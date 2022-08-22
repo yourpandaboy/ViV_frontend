@@ -68,6 +68,7 @@ with st.expander("See what's inside ViV!"):
     st.write("""
         This is for ViV's description
     """)
+    st.image('images/ViV_wordcloud2_8_22.png')
 
 # ---------------------------
 #        User Input
