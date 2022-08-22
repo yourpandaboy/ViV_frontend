@@ -151,6 +151,8 @@ if start_execution:
     gif_runner = st.image('images/wiggle.gif')
     result = user.predict_model()
     gif_runner.empty()
+    if len(result) == 0:
+        st.write('Sorry! Try again!')
     st.write(result)
     #AgGrid(result)
 # preference_df= a,b,c,d
