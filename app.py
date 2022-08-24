@@ -60,7 +60,9 @@ with row1_1:
 with row1_2:
     row1_2.title('ViV: Vibe, Interact, Live!')
     row1_2.subheader(
-    """ViV uses her vibez-tingle to scan your bio and return you your best matches!
+    """YB I NEED YOUR MAGIC REPHRASING THIS PART!!!!
+        Hi! I'm ViV! Your matchmaker! Not only I match your preference,
+        but I use my Vibez-tingle to process your "About me"... ...
     """)
     row1_2.write('**Created by Norty Nakagawa & friends! Connect with me on [github](https://github.com/yourpandaboy) and [linkedin](https://www.linkedin.com/in/norutado-nakagawa/)**')
 
