@@ -45,30 +45,21 @@ new_profile = pd.DataFrame(columns=['Name','Bio','Age','Status','Sex','Location'
 row1_1, row1_2 = st.columns((0.4,0.4)) #instantiate row 1
 
 with row1_1:
-    #"""### gif hello"""
-    # file_ = open("images/cinnamo-hello.gif", "rb")
-    # contents = file_.read()
-    # data_url = base64.b64encode(contents).decode("utf-8")
-    # file_.close()
-
-    # st.markdown(
-    #     f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
-    #     unsafe_allow_html=True,
-    # )
     st.image('images/cinnamo-hello.gif')
 
 with row1_2:
     row1_2.title('ViV: Vibe, Interact, Live!')
     row1_2.subheader(
-    "Hi! I'm ViV, your personal matchmaker!"
-    """Not only do I match you with someone based on the preferences you set,
+    " "
+    """
+        Hi! I'm ViV, your personal matchmaker! Not only do I match you with someone based on the preferences you set,
         I also consider the information you write in your bio! This is called my **“Vibes-Tingle”** which helps me to find the most suitable match for you.
         So go ahead and get started, and remember: *the more information you fill out in your bio, the stronger my Vibes-Tingle will set off in finding you a match!*
     """)
     row1_2.write('**Created by Norty Nakagawa & friends! Connect with me on [github](https://github.com/yourpandaboy) and [linkedin](https://www.linkedin.com/in/norutado-nakagawa/)**')
 
 # model info
-with st.expander("See what's inside ViV!"):
+with st.expander("**See what's inside ViV!**"):
     st.write("""
         This is for ViV's description
     """)
@@ -123,8 +114,6 @@ with row3_1:
             'Prefered ages',
             18, 100, (18, 25))
 
-# st.write('Your prefered ages:', a)
-# st.write('Your prefered ages:', b)
     a= int(a)
     b= int(b)
 
@@ -158,23 +147,9 @@ if start_execution:
         st.write('Sorry! Try again!')
     st.write(result)
     #AgGrid(result)
-# preference_df= a,b,c,d
-
-# st.write(pd.DataFrame(preference_dict))
-
-# matches_df = Matcher(bio).top_matches()
-# matches_df['sex'] = matches_df['sex'].map({1:'Male',2:'Female'})
-# st.write(matches_df)
-# st.write(matches_df.shape)
 
 # filtered_df = matches_df[(matches_df['sex'] == d) &( matches_df['age'].between(a,b)) & (matches_df['status'] == c.lower())]
 # st.write(filtered_df)
 
-# front_list=['Text_x','age','status','sex','location']
-# front_df = filtered_df[front_list]
-# front_df.sample(frac=1).reset_index(drop=True) #shuffle
-# st.write(front_df)
-# st.write(front_df.shape)
-# st.write(front_df['Text_x'])
-# st.button('finished')
+
 # mai profile = Simple is the best. Great food, drinks and people make my life fabulous. i like bar hopping, summer night, winter events, movie theatre's atmosphere, eat, drinks and sometimes cooking and board games
