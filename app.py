@@ -60,9 +60,10 @@ with row1_1:
 with row1_2:
     row1_2.title('ViV: Vibe, Interact, Live!')
     row1_2.subheader(
-    """YB I NEED YOUR MAGIC REPHRASING THIS PART!!!!
-        Hi! I'm ViV! Your matchmaker! Not only I match your preference,
-        but I use my Vibez-tingle to process your "About me"... ...
+    """
+        Hi! I'm ViV, your personal matchmaker! Not only do I match you with someone based on the preferences you set,
+        I also consider the information you write in your bio! This is called my **“Vibes-Tingle”** which helps me to find the most suitable match for you.
+        So go ahead and get started, and remember: *the more information you fill out in your bio, the stronger my Vibes-Tingle will set off in finding you a match!*
     """)
     row1_2.write('**Created by Norty Nakagawa & friends! Connect with me on [github](https://github.com/yourpandaboy) and [linkedin](https://www.linkedin.com/in/norutado-nakagawa/)**')
 
@@ -92,7 +93,7 @@ with row2_1:
 
 
 with row2_2:
-    bio = st.text_area("Enter a Bio for yourself: ")
+    bio = st.text_area("Enter a bio for yourself (4 words minumum): ")
     location = st.text_input("Enter your location: ")
 
 new_profile_dict = {'Name':[name],
