@@ -62,19 +62,16 @@ with row1_2:
 
 # model info
 with st.expander("See more about ViV!"):
-    st.write("""
-        Introduction:
-        An unsupervised learning project trained from 60k OkCupid profiles. ViV matches user's bio by identifying which topics it belong.
+        st.markdown("**Introduction:**")
+        st.write("""An unsupervised learning project trained from 60k OkCupid profiles from [Kaggle](https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles). ViV matches user's bio by identifying which topics it belong.""")
 
-        Approach & Challenges:
-        Clustering or grouping different dating bio with random topics is a challeging yet fun task.
-        After weeks of research, trials & errors, and insane amount of coffee, Java-based MALLET gave the best result.
-        The model was able to group the profiles into 19 topics (see below).
+        st.markdown("**Approach and Challenges:**")
+        st.write("""Clustering or grouping different dating bio with random topics is a challeging yet fun task. After weeks of research, trials & errors, and insane amount of coffee, Java-based MALLET gave the best result.""")
+        st.write("""The model was able to group the profiles into 19 topics (see below).""")
 
-        Model ouput:
-        By converting the model to Python-based LDA and add the new bio, ViV returns you profiles you are highly correlated from the groups.
-    """)
-    st.image('images/ViV_wordcloud2_8_24.png')
+        st.markdown("**Model Output:**")
+        st.write("""By converting the model to Python-based LDA and add the new bio, ViV returns you profiles you are highly correlated from the groups.""")
+        st.image('images/ViV_wordcloud2_8_24.png')
 
 # ---------------------------
 #        User Input
