@@ -48,9 +48,13 @@ with row1_1:
     st.image('images/cinnamo-hello.gif')
 
 with row1_2:
-    row1_2.title('ViV: Vibe, Interact, Live!')
+    row1_2.title("Hi! I'm ViV, your personal matchmaker!")
     row1_2.subheader(
-    """Hi! I'm ViV, your personal matchmaker! Not only do I match you with someone based on the preferences you set, I also consider the information you write in your bio! This is called my **“Vibes-Tingle”** which helps me to find the most suitable match for you. So go ahead and get started, and remember: *the more information you fill out in your bio, the stronger my Vibes-Tingle will set off in finding you a match!*""")
+    """
+        Not only do I match you with someone based on the preferences you set,
+        I also consider the information you write in your bio! This is called my **“Vibes-Tingle”** which helps me to find the most suitable match for you.
+        So go ahead and get started, and remember: *the more information you fill out in your bio, the stronger my Vibes-Tingle will set off in finding you a match!*
+    """)
     row1_2.write('**Created by Norty Nakagawa! Connect with me on [github](https://github.com/yourpandaboy) and [linkedin](https://www.linkedin.com/in/norutado-nakagawa/)**')
 
 # model info
