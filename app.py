@@ -46,7 +46,7 @@ new_profile = pd.DataFrame(columns=['Name','Bio','Age','Status','Sex','Location'
 pad, row1_1, row1_2 = st.columns((3,7,10)) #instantiate row 1
 
 with row1_1:
-    st.image('images/WG8T.gif', width= 300)
+    st.image('images/WG8T.gif', width= 330)
 
 with row1_2:
     #row1_2.title("")
@@ -61,9 +61,18 @@ with row1_2:
     row1_2.write('**Created by Norty Nakagawa and special thanks to Tony! Connect with me on [github](https://github.com/yourpandaboy) and [linkedin](https://www.linkedin.com/in/norutado-nakagawa/)**')
 
 # model info
-with st.expander("See what's inside ViV!"):
+with st.expander("See more about ViV!"):
     st.write("""
-        This is for ViV's description
+        Introduction:
+        An unsupervised learning project trained from 60k OkCupid profiles. ViV matches user's bio by identifying which topics it belong.
+
+        Approach & Challenges:
+        Clustering or grouping different dating bio with random topics is a challeging yet fun task.
+        After weeks of research, trials & errors, and insane amount of coffee, Java-based MALLET gave the best result.
+        The model was able to group the profiles into 19 topics (see below).
+
+        Model ouput:
+        By converting the model to Python-based LDA and add the new bio, ViV returns you profiles you are highly correlated from the groups.
     """)
     st.image('images/ViV_wordcloud2_8_24.png')
 
