@@ -112,7 +112,7 @@ new_profile = new_profile_dict
 #        User Preference
 # ---------------------------
 
-st.markdown("""<hr style="height:4px;border:none;color:#161F6D;background-color:#161F6D;" /> """, unsafe_allow_html=True)
+st.markdown("""<hr style="height:6px;border:none;color:#FFFFFF;background-color:#FFFFFF;" /> """, unsafe_allow_html=True)
 
 # Instantiating a new user preference DF to use as a filter later
 preference_df = pd.DataFrame(columns= ['Age_start','Age_end','Status','Sex'])
