@@ -57,7 +57,7 @@ with row1_2:
         So go ahead and get started, and remember: *the more information you fill out in your bio, the stronger my Vibes-Tingle will set off in finding you a match!*
 
     """)
-    row1_2.write('**Created by Norty Nakagawa! Connect with me on [github](https://github.com/yourpandaboy) and [linkedin](https://www.linkedin.com/in/norutado-nakagawa/)**')
+    row1_2.write('**Created by Norty Nakagawa and special thanks to Tony! Connect with me on [github](https://github.com/yourpandaboy) and [linkedin](https://www.linkedin.com/in/norutado-nakagawa/)**')
 
 # model info
 with st.expander("See what's inside ViV!"):
