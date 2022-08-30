@@ -1,5 +1,6 @@
 from hashlib import new
 import streamlit as st
+import time
 #from st_aggrid import AgGrid
 #config page
 st.set_page_config(
@@ -147,8 +148,9 @@ start_execution = st.button('ViV Me!')
 if start_execution and len(tmp_arr) < 4:
     st.warning('Please enter at least 4 words.')
     st.stop()
-elif start_execution and len(tmp_arr) >= 4:
-    st.spinner("ViV's Vibe-Tingle Activated!")
+if start_execution and len(tmp_arr) >= 4:
+    with st.spinner("ViV's Vibe-Tingle Activated!"):
+        time.sleep(10)
     #gif_runner = st.image('images/wiggle.gif')
     result = user.predict_model()
     #gif_runner.empty()
