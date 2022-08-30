@@ -155,7 +155,7 @@ if start_execution and len(tmp_arr) >= 4:
     result = user.predict_model()
     #gif_runner.empty()
     if len(result) == 0:
-        st.write('Sorry! Try again!')
+        st.write('Sorry! Try again or make sure to choose your preference. 😉')
     st.write(result)
     #AgGrid(result)
 
