@@ -43,10 +43,10 @@ add_bg_from_local('images/panda-sweet-dark.jpg')
 # Instantiating a new user DF
 new_profile = pd.DataFrame(columns=['Name','Bio','Age','Status','Sex','Location']
                            )
-row1_1, row1_2 = st.columns((0.4,0.4)) #instantiate row 1
+row1_1, row1_2 = st.columns((0.8,0.4)) #instantiate row 1
 
 with row1_1:
-    st.image('images/WG8T.gif')
+    st.image('images/WG8T.gif', width= 400)
 
 with row1_2:
     #row1_2.title("")
