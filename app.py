@@ -87,7 +87,7 @@ with row2_1:
 with row2_2:
     bio = st.text_area("Enter a bio for yourself (4 words minumum): ")
     tmp_arr = bio.split()
-    if len(bio) < 4:
+    if len(tmp_arr) < 4:
         st.warning('Please enter at least 4 words.')
         st.stop()
     location = st.text_input("Enter your location: ")
