@@ -87,9 +87,7 @@ with row2_1:
 with row2_2:
     bio = st.text_area("Enter a bio for yourself (4 words minumum): ")
     tmp_arr = bio.split()
-    if len(tmp_arr) < 4:
-        st.warning('Please enter at least 4 words.')
-        st.stop()
+
     location = st.text_input("Enter your location: ")
 
 
@@ -146,7 +144,10 @@ user = ViV(name,bio,age,status,a,b,d,c)
 
 
 start_execution = st.button('ViV Me!')
-if start_execution:
+if start_execution and len(tmp_arr) < 4:
+    st.warning('Please enter at least 4 words.')
+    st.stop()
+else:
     gif_runner = st.image('images/wiggle.gif')
     result = user.predict_model()
     gif_runner.empty()
