@@ -46,7 +46,7 @@ new_profile = pd.DataFrame(columns=['Name','Bio','Age','Status','Sex','Location'
 row1_1, row1_2 = st.columns((0.4,0.4)) #instantiate row 1
 
 with row1_1:
-    st.image('images/cinnamo-hello.gif')
+    st.image('images/WG8T.gif')
 
 with row1_2:
     #row1_2.title("")
