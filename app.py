@@ -147,10 +147,11 @@ start_execution = st.button('ViV Me!')
 if start_execution and len(tmp_arr) < 4:
     st.warning('Please enter at least 4 words.')
     st.stop()
-else:
-    gif_runner = st.image('images/wiggle.gif')
+elif start_execution and len(tmp_arr) >= 4:
+    st.spinner("ViV's Vibe-Tingle Activated!")
+    #gif_runner = st.image('images/wiggle.gif')
     result = user.predict_model()
-    gif_runner.empty()
+    #gif_runner.empty()
     if len(result) == 0:
         st.write('Sorry! Try again!')
     st.write(result)
