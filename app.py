@@ -48,10 +48,11 @@ with row1_1:
     st.image('images/cinnamo-hello.gif')
 
 with row1_2:
-    row1_2.title("Hi! I'm ViV, your personal matchmaker!")
+    #row1_2.title("")
     row1_2.subheader(
     """
 
+        Hi! I'm ViV, your personal matchmaker!
         Not only do I match you with someone based on the preferences you set, I also consider the information you write in your bio! This is called my **“Vibes-Tingle”** which helps me to find the most suitable match for you.
         So go ahead and get started, and remember: *the more information you fill out in your bio, the stronger my Vibes-Tingle will set off in finding you a match!*
 
