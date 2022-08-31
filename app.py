@@ -46,10 +46,9 @@ new_profile = pd.DataFrame(columns=['Name','Bio','Age','Status','Sex','Location'
 pad, row1_1, row1_2 = st.columns((3,7,10)) #instantiate row 1
 
 with row1_1:
-    st.image('images/hello.gif', width= 330)
+    st.image('images/hello.gif', width= 360)
 
 with row1_2:
-    #row1_2.title("")
     row1_2.subheader(
     """
 
@@ -66,11 +65,12 @@ with st.expander("See more about ViV!"):
         st.write("""An unsupervised learning project trained from 60k OkCupid profiles from [Kaggle](https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles). ViV matches user's bio by identifying which topics it belong.""")
 
         st.markdown("**Approach and Challenges:**")
-        st.write("""Clustering or grouping different dating bio with random topics is a challeging yet fun task. After weeks of research, trials & errors, and insane amount of coffee, Java-based MALLET gave the best result.""")
-        st.write("""The model was able to group the profiles into 19 topics (see below).""")
+        st.write("""Clustering or grouping different dating bio with random topics is a challeging yet fun task. After weeks of research, trials & errors, and insane amount of coffee ☕️ , Java-based MALLET gave the best result.""")
+        st.write("""You can check out different approaches used and step by step procedure and training used in this repo [ViV-backend](https://github.com/yourpandaboy/ViV).""")
+        st.write("""The model was able to group the profiles into 19 topics (see WordCloud below).""")
 
         st.markdown("**Model Output:**")
-        st.write("""By converting the model to Python-based LDA and add the new bio, ViV returns you profiles you are highly correlated from the groups.""")
+        st.write("""By converting the model to Python-based LDA and adding the new bio, ViV allocates user's bio within the 19 groups, then returns you profiles you are highly correlated within those groups (WordCloud topics).""")
         st.image('images/ViV_wordcloud2_8_24.png')
 
 # ---------------------------
