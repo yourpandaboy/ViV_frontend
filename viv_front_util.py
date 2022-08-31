@@ -42,10 +42,12 @@ class ViV():
         self.data['Status'] = self.data['Status'].apply(lambda x: x.capitalize())
         if disp_all:
             return self.data
-        return self.data[['Profile', 'Age', 'Location', 'Sex', 'Dominant_Topics']]
+        #return self.data[['Profile', 'Age', 'Location', 'Sex', 'Dominant_Topics', 'Status']]
+        filtered_df = self.data[(self.data['sex'] == self.pref_sex) &( self.data['age'].between(self.pref_start,self.pref_end)) & (self.data['status'] == self.status)]
+        return filtered_df
 
 
 if __name__ == '__main__':
-    viv1 = ViV('apple',"hi mizuki i like to workout and dance like a cowboy grinding at the club. i want some baddie girls", 20, 'single', 18, 30, 'female', 'single')
+    viv1 = ViV('apple',"hi mizuki i like to workout and dance like a cowboy grinding at the club. i want some baddie boys", 20, 'single', 18, 30, 'male', 'single')
     results = viv1.predict_model()
     print(results)
