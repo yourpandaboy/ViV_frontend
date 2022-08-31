@@ -64,7 +64,7 @@ with st.expander("See more about ViV!"):
         st.markdown("**Introduction:**")
         st.write("""I have always been fascinated in systems such as matchmaking, recommender, association etc. And what if we could use the aid of Machine Learning to increase the chance of meeting people we are truly similar with (by understanding user's "About me" section).""")
         st.write("""Companies such as Spotify, Amazon, Rakuten, or Netflix are heavily invested in this field, but in slightly different way by recommending you music, items and movies you might be interested in.""")
-        st.write("""ViV is an unsupervised learning project trained from 60,000 OkCupid profiles from [Kaggle](https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles). ViV matches user's bio by identifying which topics it belong.""")
+        st.write("""ViV is an unsupervised learning project trained from 60,000 OkCupid profiles from [Kaggle](https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles). It matches user's bio by identifying which topics the user belong.""")
 
 
         st.markdown("**Approach and Challenges:**")
