@@ -42,7 +42,7 @@ class ViV():
         self.data['Status'] = self.data['Status'].apply(lambda x: x.capitalize())
         if disp_all:
             return self.data
-        return self.data[['Profile', 'Age', 'Location']]
+        return self.data[['Profile', 'Age', 'Location', 'Sex', 'Dominant_Topics']]
 
 
 if __name__ == '__main__':
