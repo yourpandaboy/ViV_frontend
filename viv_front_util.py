@@ -43,7 +43,7 @@ class ViV():
         if disp_all:
             return self.data
         #return self.data[['Profile', 'Age', 'Location', 'Sex', 'Dominant_Topics', 'Status']]
-        return self.data[(self.data['sex'] == self.pref_sex) &( self.data['age'].between(self.pref_start,self.pref_end)) & (self.data['status'] == self.status)]
+        return self.data[(self.data['Sex'] == self.pref_sex) &(self.data['Age'].between(self.pref_start,self.pref_end)) & (self.data['Status'] == self.status)]
 
 
 
