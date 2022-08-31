@@ -1,5 +1,6 @@
 from hashlib import new
 import streamlit as st
+import time
 #from st_aggrid import AgGrid
 #config page
 st.set_page_config(
@@ -36,39 +37,41 @@ def add_bg_from_local(image_file):
     """,
     unsafe_allow_html=True
     )
-add_bg_from_local('images/panda-sweet-croped.jpg')
+add_bg_from_local('images/panda-sweet-dark.jpg')
 
 
 # Instantiating a new user DF
 new_profile = pd.DataFrame(columns=['Name','Bio','Age','Status','Sex','Location']
                            )
-row1_1, row1_2 = st.columns((0.4,0.4)) #instantiate row 1
+pad, row1_1, row1_2 = st.columns((3,7,10)) #instantiate row 1
 
 with row1_1:
-    #"""### gif hello"""
-    file_ = open("images/cinnamo-hello.gif", "rb")
-    contents = file_.read()
-    data_url = base64.b64encode(contents).decode("utf-8")
-    file_.close()
-
-    st.markdown(
-        f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
-        unsafe_allow_html=True,
-    )
+    st.image('images/WG8T.gif', width= 330)
 
 with row1_2:
-    row1_2.title('ViV: Vibe, Interact, Live!')
+    #row1_2.title("")
     row1_2.subheader(
-    """ViV uses her vibez-tingle to scan your bio and return you your best matches!
+    """
+
+        Hi! I'm ViV, your personal matchmaker!
+        Not only do I match you with someone based on the preferences you set, I also consider the information you write in your bio! This is called my **“Vibes-Tingle”** which helps me to find the most suitable match for you.
+        So go ahead and get started, and remember: *the more information you fill out in your bio, the stronger my Vibes-Tingle will set off in finding you a match!*
+
     """)
-    row1_2.write('**Created by Norty Nakagawa & friends! Connect with me on [github](https://github.com/yourpandaboy) and [linkedin](https://www.linkedin.com/in/norutado-nakagawa/)**')
+    row1_2.write('**Created by Norty Nakagawa and special thanks to Tony! Connect with me on [github](https://github.com/yourpandaboy) and [linkedin](https://www.linkedin.com/in/norutado-nakagawa/)**')
 
 # model info
-with st.expander("See what's inside ViV!"):
-    st.write("""
-        This is for ViV's description
-    """)
-    st.image()
+with st.expander("See more about ViV!"):
+        st.markdown("**Introduction:**")
+        st.write("""An unsupervised learning project trained from 60k OkCupid profiles from [Kaggle](https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles). ViV matches user's bio by identifying which topics it belong.""")
+
+        st.markdown("**Approach and Challenges:**")
+        st.write("""Clustering or grouping different dating bio with random topics is a challeging yet fun task. After weeks of research, trials & errors, and insane amount of coffee, Java-based MALLET gave the best result.""")
+        st.write("""The model was able to group the profiles into 19 topics (see below).""")
+
+        st.markdown("**Model Output:**")
+        st.write("""By converting the model to Python-based LDA and add the new bio, ViV returns you profiles you are highly correlated from the groups.""")
+        st.image('images/ViV_wordcloud2_8_24.png')
 
 # ---------------------------
 #        User Input
@@ -89,8 +92,12 @@ with row2_1:
 
 
 with row2_2:
-    bio = st.text_area("Enter a Bio for yourself: ")
+    bio = st.text_area("Enter a bio for yourself (4 words minumum): ")
+    tmp_arr = bio.split()
+
     location = st.text_input("Enter your location: ")
+
+
 
 new_profile_dict = {'Name':[name],
                     'Bio':[bio],
@@ -105,7 +112,7 @@ new_profile = new_profile_dict
 #        User Preference
 # ---------------------------
 
-st.markdown("""<hr style="height:4px;border:none;color:#161F6D;background-color:#161F6D;" /> """, unsafe_allow_html=True)
+st.markdown("""<hr style="height:6px;border:none;color:#FFFFFF;background-color:#FFFFFF;" /> """, unsafe_allow_html=True)
 
 # Instantiating a new user preference DF to use as a filter later
 preference_df = pd.DataFrame(columns= ['Age_start','Age_end','Status','Sex'])
@@ -119,8 +126,6 @@ with row3_1:
             'Prefered ages',
             18, 100, (18, 25))
 
-# st.write('Your prefered ages:', a)
-# st.write('Your prefered ages:', b)
     a= int(a)
     b= int(b)
 
@@ -146,31 +151,22 @@ user = ViV(name,bio,age,status,a,b,d,c)
 
 
 start_execution = st.button('ViV Me!')
-if start_execution:
-    gif_runner = st.image('images/wiggle.gif')
+if start_execution and len(tmp_arr) < 4:
+    st.warning('Please enter at least 4 words.')
+    st.stop()
+if start_execution and len(tmp_arr) >= 4:
+    with st.spinner("ViV's Vibe-Tingle Activated!"):
+        time.sleep(10)
+    #gif_runner = st.image('images/wiggle.gif')
     result = user.predict_model()
-    gif_runner.empty()
+    #gif_runner.empty()
+    if len(result) == 0:
+        st.write('Sorry! Try again or make sure to choose your preference. 😉')
     st.write(result)
-    st.table(result)
-    st.dataframe(result)
-    #AgGrid(result)git
-# preference_df= a,b,c,d
-
-# st.write(pd.DataFrame(preference_dict))
-
-# matches_df = Matcher(bio).top_matches()
-# matches_df['sex'] = matches_df['sex'].map({1:'Male',2:'Female'})
-# st.write(matches_df)
-# st.write(matches_df.shape)
+    #AgGrid(result)
 
 # filtered_df = matches_df[(matches_df['sex'] == d) &( matches_df['age'].between(a,b)) & (matches_df['status'] == c.lower())]
 # st.write(filtered_df)
 
-# front_list=['Text_x','age','status','sex','location']
-# front_df = filtered_df[front_list]
-# front_df.sample(frac=1).reset_index(drop=True) #shuffle
-# st.write(front_df)
-# st.write(front_df.shape)
-# st.write(front_df['Text_x'])
-# st.button('finished')
+
 # mai profile = Simple is the best. Great food, drinks and people make my life fabulous. i like bar hopping, summer night, winter events, movie theatre's atmosphere, eat, drinks and sometimes cooking and board games
