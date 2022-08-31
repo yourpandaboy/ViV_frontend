@@ -145,7 +145,7 @@ preference_dict = {'Age_start': [a],
                    'Age_end':[b],
                    'Status':[c],
                    'Sex':[d]}
-
+st.write(preference_dict)
 user = ViV(name,bio,age,status,a,b,d,c)
 
 # ---------------------------
