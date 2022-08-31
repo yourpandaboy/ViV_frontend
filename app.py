@@ -62,12 +62,15 @@ with row1_2:
 # model info
 with st.expander("See more about ViV!"):
         st.markdown("**Introduction:**")
-        st.write("""An unsupervised learning project trained from 60k OkCupid profiles from [Kaggle](https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles). ViV matches user's bio by identifying which topics it belong.""")
+        st.write("""I have always been fascinated in systems such as matchmaking, recommender, association etc. And what if we could use the aid of Machine Learning to increase the chance of meeting people we are truly similar with (by understanding user's "About me" section).""")
+        st.write("""Companies such as Spotify, Amazon, Rakuten, or Netflix are heavily invested in this field, but in slightly different way by recommending you music, items and movies you might be interested in.""")
+        st.write("""ViV is an unsupervised learning project trained from 60,000 OkCupid profiles from [Kaggle](https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles). ViV matches user's bio by identifying which topics it belong.""")
+
 
         st.markdown("**Approach and Challenges:**")
         st.write("""Clustering or grouping different dating bio with random topics is a challeging yet fun task. After weeks of research, trials & errors, and insane amount of coffee ☕️ , Java-based MALLET gave the best result.""")
-        st.write("""You can check out different approaches used and step by step procedure and training used in this repo [ViV-backend](https://github.com/yourpandaboy/ViV).""")
-        st.write("""The model was able to group the profiles into 19 topics (see WordCloud below).""")
+        st.write("""You can check out different approaches used that didn't work, step by step procedure and training used to creating this model in this repo [ViV-backend](https://github.com/yourpandaboy/ViV).""")
+        st.write("""The model was able to group the profiles into 19 different topics (see WordCloud below).""")
 
         st.markdown("**Model Output:**")
         st.write("""By converting the model to Python-based LDA and adding the new bio, ViV allocates user's bio within the 19 groups, then returns you profiles you are highly correlated within those groups (WordCloud topics).""")
