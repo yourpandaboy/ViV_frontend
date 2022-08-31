@@ -162,9 +162,10 @@ if start_execution and len(tmp_arr) >= 4:
     #gif_runner.empty()
     if len(result) == 0:
         st.write('Sorry! Try again or make sure to choose your preference. 😉')
-    st.write(result)
+    st.success('Here are your potential matches!')
+    st.balloons()
     st.table(result)
-    st.dataframe(result)
+
     #AgGrid(result)
 
 # filtered_df = matches_df[(matches_df['sex'] == d) &( matches_df['age'].between(a,b)) & (matches_df['status'] == c.lower())]
