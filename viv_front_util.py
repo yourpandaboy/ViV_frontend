@@ -42,8 +42,11 @@ class ViV():
         self.data['Status'] = self.data['Status'].apply(lambda x: x.capitalize())
         if disp_all:
             return self.data
-        return self.data[['Sex'] == self.pref_sex]
-        #return self.data[['Profile', 'Age', 'Location', 'Sex', 'Dominant_Topics', 'Status']]
+        print(self.pref_start)
+        print(self.pref_end)
+        print(self.pref_sex)
+        print(self.status)
+        return self.data[['Profile', 'Age', 'Location', 'Sex', 'Dominant_Topics', 'Status']]
         #return self.data[(self.data['Sex'] == self.pref_sex) &(self.data['Age'].between(self.pref_start,self.pref_end)) & (self.data['Status'] == self.status)]
 
 
