@@ -46,7 +46,7 @@ new_profile = pd.DataFrame(columns=['Name','Bio','Age','Status','Sex','Location'
 pad, row1_1, row1_2 = st.columns((3,7,10)) #instantiate row 1
 
 with row1_1:
-    st.image('images/WG8T.gif', width= 330)
+    st.image('images/hello.gif', width= 330)
 
 with row1_2:
     #row1_2.title("")
@@ -161,10 +161,12 @@ if start_execution and len(tmp_arr) >= 4:
     result = user.predict_model()
     #gif_runner.empty()
     if len(result) == 0:
-        st.write('Sorry! Try again or make sure to choose your preference. 😉')
-    st.success('Here are your potential matches!')
-    st.balloons()
-    st.table(result)
+        st.warning('Sorry! Try again or make sure to choose your preference. 😉')
+        st.image('images/sleep.gif', width= 300)
+    else:
+        st.success('Here are your potential matches!')
+        st.image('images/WG8T.gif', width= 250)
+        st.table(result)
 
     #AgGrid(result)
 
