@@ -68,9 +68,9 @@ with st.expander("See more about ViV!"):
 
 
         st.markdown("**Approach and Challenges:**")
-        st.write("""Clustering or grouping different dating bio with random topics is a challeging yet fun task. After weeks of research, trials & errors, and insane amount of coffee ☕️ , Java-based MALLET gave the best result.""")
-        st.write("""You can check out different approaches used that didn't work, step by step procedure and training used to creating this model in this repo [ViV-backend](https://github.com/yourpandaboy/ViV).""")
-        st.write("""The model was able to group the profiles into 19 different topics (see WordCloud below).""")
+        st.write("""Clustering or grouping different dating bio with random topics is a challeging yet fun task. After weeks of research 🧐, trials & errors, and insane amount of coffee ☕️ , Java-based MALLET gave the best result! 🥳""")
+        st.write("""You can check out different approaches used that didn't work 😵‍💫. As well as step by step procedure and training done to creating this model in this repo [ViV-backend](https://github.com/yourpandaboy/ViV).""")
+        st.write("""Finally, the model was able to group the profiles into 19 different topics (see WordCloud below).""")
 
         st.markdown("**Model Output:**")
         st.write("""By converting the model to Python-based LDA and adding the new bio, ViV allocates user's bio within the 19 groups, then returns you profiles you are highly correlated within those groups (WordCloud topics).""")
@@ -145,7 +145,6 @@ preference_dict = {'Age_start': [a],
                    'Age_end':[b],
                    'Status':[c],
                    'Sex':[d]}
-st.write(preference_dict)
 user = ViV(name,bio,age,status,a,b,d,c)
 
 # ---------------------------
