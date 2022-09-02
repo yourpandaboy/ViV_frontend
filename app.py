@@ -46,7 +46,7 @@ new_profile = pd.DataFrame(columns=['Name','Bio','Age','Status','Sex','Location'
 pad, row1_1, row1_2 = st.columns((3,7,10)) #instantiate row 1
 
 with row1_1:
-    st.image('images/hello.gif', width= 360)
+    st.image('images/hello.gif', width= 300)
 def header(url):
      st.markdown(f'<p style="background-color:#0066cc;color:#33ff33;font-size:24px;border-radius:2%;">{url}</p>', unsafe_allow_html=True)
 with row1_2:
