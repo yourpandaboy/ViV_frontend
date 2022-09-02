@@ -1,27 +1,26 @@
 from hashlib import new
 import streamlit as st
 import time
-#from st_aggrid import AgGrid
-#config page
-st.set_page_config(
-    page_title='ViV: Vibe, Interact, Live!',
-    page_icon='🐼',
-    layout = 'wide',
-    theme = 'dark')
-
 import pandas as pd
 import base64
 from viv_front_util import ViV
 
+#config page
+st.set_page_config(
+    page_title='ViV: Vibe, Interact, Live!',
+    page_icon='🐼',
+    layout = 'wide'
+    )
+
 # Remove the menu button and footer note from Streamlit
-# st.markdown(
-#     """
-#     <style>
-#     #MainMenu {visibility: hidden;}
-#     footer {visibility: hidden;}
-#     </style>
-#     """,
-#     unsafe_allow_html=True)
+st.markdown(
+    """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    """,
+    unsafe_allow_html=True)
 
 #background image
 def add_bg_from_local(image_file):
