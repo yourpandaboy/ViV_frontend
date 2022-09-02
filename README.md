@@ -1,74 +1,36 @@
-# Data analysis
-- Document here the project: ViV_frontend
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+![image](https://github.com/yourpandaboy/ViV_frontend/blob/master/images/rsz_1intro_shot.jpg)
 
-Please document the project the better you can.
+I think we all know how traditional dating websites match you with checkbox preferences based on interests. Wouldn’t it more fun if your matches vibe with you? Using your bio, with the help of our friendly NLP model, this web app understands your personality and finds matches that will vibe with you.
 
-# Startup the project
+Introducing ViV! An unsupervised learning project trained from 60,000 OkCupid profiles from [Kaggle](https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles).
 
-The initial setup.
+After weeks of research 🧐, trials & errors, and insane amount of coffee ☕️ , Java-based MALLET gave the best result to classify 60,000 profiles into 19 topics!
 
-Create virtualenv and install the project:
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
-    pip install pip -U; pip install -r requirements.txt
-```
+![image](https://github.com/yourpandaboy/ViV_frontend/blob/master/images/rsz_viv_wordcloud2_8_24.jpg)
 
-Unittest test:
-```bash
-make clean install test
-```
+By converting the model to Python-based LDA, ViV gets your required information (bio is the most important) and does it's magic to allocate your bio within the 19 groups. Finally returns you profiles you are highly correlated within those groups (WordCloud topics).
 
-Check for ViV_frontend in gitlab.com/{group}.
-If your project is not set please add it:
+App home: https://projectviv28.herokuapp.com/
 
-- Create a new project on `gitlab.com/{group}/ViV_frontend`
-- Then populate it:
+![image](https://github.com/yourpandaboy/ViV_frontend/blob/master/images/matches3.jpg)
 
-```bash
-##   e.g. if group is "{group}" and project_name is "ViV_frontend"
-git remote add origin git@github.com:{group}/ViV_frontend.git
-git push -u origin master
-git push -u origin --tags
-```
+# Tech Stack
+### Front End
+- <a href="https://streamlit.io/">Streamlit</a>
+- <a href="https://www.heroku.com/">Heroku</a>
 
-Functionnal test with a script:
+### Back End
+- <a href="https://fastapi.tiangolo.com/">FastAPI</a>
+- <a href="https://www.docker.com/">Docker</a>
+- <a href="https://cloud.google.com/">Google Cloud Platform</a>
 
-```bash
-cd
-mkdir tmp
-cd tmp
-ViV_frontend-run
-```
 
-# Install
+### Machine Learning Tools
+- <a href="https://mallet.cs.umass.edu/index.php/Main_Page">JAVA MALLET</a>
+- <a href="https://www.nltk.org/index.html">nltk </a>
+- - <a href="https://radimrehurek.com/gensim/">Gensim </a>
+- - <a href="https://spacy.io/">Spacy </a>
 
-Go to `https://github.com/{group}/ViV_frontend` to see the project, manage issues,
-setup you ssh public key, ...
 
-Create a python3 virtualenv and activate it:
-
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv -ppython3 ~/venv ; source ~/venv/bin/activate
-```
-
-Clone the project and install it:
-
-```bash
-git clone git@github.com:{group}/ViV_frontend.git
-cd ViV_frontend
-pip install -r requirements.txt
-make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-ViV_frontend-run
-```
+# Special thanks
+- <a href="https://github.com/mechworrior">Tony</a>
