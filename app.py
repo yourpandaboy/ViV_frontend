@@ -13,14 +13,14 @@ import base64
 from viv_front_util import ViV
 
 # Remove the menu button and footer note from Streamlit
-st.markdown(
-    """
-    <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    </style>
-    """,
-    unsafe_allow_html=True)
+# st.markdown(
+#     """
+#     <style>
+#     #MainMenu {visibility: hidden;}
+#     footer {visibility: hidden;}
+#     </style>
+#     """,
+#     unsafe_allow_html=True)
 
 #background image
 def add_bg_from_local(image_file):
@@ -47,7 +47,8 @@ pad, row1_1, row1_2 = st.columns((3,7,10)) #instantiate row 1
 
 with row1_1:
     st.image('images/hello.gif', width= 360)
-
+def header(url):
+     st.markdown(f'<p style="background-color:#0066cc;color:#33ff33;font-size:24px;border-radius:2%;">{url}</p>', unsafe_allow_html=True)
 with row1_2:
     row1_2.subheader(
     """
@@ -55,7 +56,7 @@ with row1_2:
         Hi! I'm ViV, your personal matchmaker!
         Not only do I match you with someone based on the preferences you set, I also consider the information you write in your bio! This is called my **“Vibes-Tingle”** which helps me to find the most suitable match for you.
         So go ahead and get started, and remember: *the more information you fill out in your bio, the stronger my Vibes-Tingle will set off in finding you a match!*
-
+        header()
     """)
     row1_2.write('**Created by Norty Nakagawa. Connect with me on [github](https://github.com/yourpandaboy) and [linkedin](https://www.linkedin.com/in/norutado-nakagawa/)**')
 
@@ -166,7 +167,7 @@ if start_execution and len(tmp_arr) >= 4:
         st.warning('Sorry! Try again or make sure to choose your preference. 😉')
         st.image('images/sleep.gif', width= 300)
     else:
-        st.success('Here are your potential matches!')
+        st.success('Here are your potential matches! View fullscreen to expand! 😉')
         st.image('images/WG8T.gif', width= 250)
         st.table(result)
 
