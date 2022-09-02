@@ -134,19 +134,19 @@ with row3_1:
     b= int(b)
 
 with row3_2:
-    c = st.selectbox(
-        'Your prefered status you want to meet',
-        ('--','Single', 'In a relationship', 'Married'))
+    #c = st.selectbox(
+        #'Your prefered status you want to meet',
+        #('--','Single', 'In a relationship', 'Married'))
 
     d = st.selectbox(
         'Your prefered gender you want to meet',
         ('--','Male', 'Female', 'Others'))
 
-preference_dict = {'Age_start': [a],
-                   'Age_end':[b],
-                   'Status':[c],
-                   'Sex':[d]}
-user = ViV(name,bio,age,status,a,b,d,c)
+#preference_dict = {'Age_start': [a],
+                   #'Age_end':[b],
+                   #'Status':[c],
+                   #'Sex':[d]}
+user = ViV(name,bio,age,status,a,b,d,"Single")
 
 # ---------------------------
 #        Run model
