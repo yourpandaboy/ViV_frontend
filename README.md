@@ -8,7 +8,7 @@ After weeks of research 🧐, trials & errors, and insane amount of coffee ☕�
 
 ![image](https://github.com/yourpandaboy/ViV_frontend/blob/master/images/rsz_viv_wordcloud2_8_24.jpg)
 
-By converting the model to Python-based LDA, ViV gets your required information (bio is the most important) and does it's magic to allocate your bio within the 19 groups. Finally returns you profiles you are highly correlated within those groups (WordCloud topics).
+By converting the model to Python-based LDA, ViV gets your required information (bio is the most important) and does its magic to allocate your bio within the 19 groups. Finally returns you profiles you are highly correlated within those groups (WordCloud topics).
 
 App home: https://projectviv28.herokuapp.com/
 
