@@ -13,7 +13,7 @@ port = $PORT\n\
 [theme]
 base='dark'
 primaryColor='#F63366'
-secondaryBackgroundColor='#B2BCC2'
+secondaryBackgroundColor='#212121'
 textColor='#FFFFFF'
 font='sans serif'
 " > ~/.streamlit/config.toml
