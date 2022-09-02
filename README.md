@@ -28,8 +28,8 @@ App home: https://projectviv28.herokuapp.com/
 ### Machine Learning Tools
 - <a href="https://mallet.cs.umass.edu/index.php/Main_Page">JAVA MALLET</a>
 - <a href="https://www.nltk.org/index.html">nltk </a>
-- - <a href="https://radimrehurek.com/gensim/">Gensim </a>
-- - <a href="https://spacy.io/">Spacy </a>
+- <a href="https://radimrehurek.com/gensim/">Gensim </a>
+- <a href="https://spacy.io/">Spacy </a>
 
 
 # Special thanks
