@@ -40,11 +40,11 @@ class ViV():
                                                     ], axis ='columns')
         self.data['Sex'] = self.data['Sex'].map({1:'Male',2:'Female'})
         self.data['Status'] = self.data['Status'].apply(lambda x: x.capitalize())
-        self.data['Dominant_Topics'] = self.data['Dominant_Topics'].apply(lambda x: round(x))
+        #self.data['Dominant_Topics'] = self.data['Dominant_Topics'].apply(lambda x: round(x))
         if disp_all:
             return self.data
 
-        return self.data[['Profile', 'Age', 'Location', 'Sex', 'Dominant_Topics', 'Status']]
+        return self.data[['Profile', 'Age', 'Location', 'Sex', 'Status']]
         #return self.data[(self.data['Sex'] == self.pref_sex) &(self.data['Age'].between(self.pref_start,self.pref_end)) & (self.data['Status'] == self.status)]
 
 
