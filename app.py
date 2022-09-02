@@ -6,7 +6,8 @@ import time
 st.set_page_config(
     page_title='ViV: Vibe, Interact, Live!',
     page_icon='🐼',
-    layout = 'wide')
+    layout = 'wide',
+    theme = 'dark')
 
 import pandas as pd
 import base64
