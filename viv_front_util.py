@@ -16,7 +16,7 @@ class ViV():
 
     def predict_model(self,disp_all = False):
 
-        url = 'https://viv7-wi4xtxynwq-de.a.run.app/new user bio'
+        url = 'https://viv15-wi4xtxynwq-de.a.run.app/new user bio'
 
         params = {'name':self.name,
                   'bio':self.bio,
