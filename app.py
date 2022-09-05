@@ -171,19 +171,19 @@ if start_execution and len(tmp_arr) >= 4:
         st.success('Here are your potential matches! View fullscreen to expand! 😉')
         st.image('images/WG8T.gif', width= 250)
         st.table(result)
-        new = result.reset_index().drop("index", axis =1)
-        st.subheader("Want to browse your matches interactively? 😎 Click below! ⬇️")
-        interactive_button = st.button("Interactive View!")
-        if interactive_button:
-            st.table(result.new[[0]])
-            like_button = st.button("Like")
-            pass_button = st.button("Pass")
-            if like_button:
-                st.session_state.a_counter += 1
-                st.table(result.iloc[[st.session_state.a_counter]])
-            if pass_button:
-                st.session_state.a_counter += 1
-                st.table(result.iloc[[st.session_state.a_counter]])
+        # new = result.reset_index().drop("index", axis =1)
+        # st.subheader("Want to browse your matches interactively? 😎 Click below! ⬇️")
+        # interactive_button = st.button("Interactive View!")
+        # if interactive_button:
+        #     st.table(result.new[[0]])
+        #     like_button = st.button("Like")
+        #     pass_button = st.button("Pass")
+        #     if like_button:
+        #         st.session_state.a_counter += 1
+        #         st.table(result.iloc[[st.session_state.a_counter]])
+        #     if pass_button:
+        #         st.session_state.a_counter += 1
+        #         st.table(result.iloc[[st.session_state.a_counter]])
 
 
     #AgGrid(result)
