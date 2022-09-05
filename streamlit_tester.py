@@ -48,10 +48,13 @@ st.write(st.session_state.liked)
 
 
 
-
+start_button = st.button("See my matches!")
 like_button = st.button("Like")
 pass_button = st.button("Pass")
 #pass_button, col2, like_button = st.columns([1,1,1])
+
+if start_button:
+    st.table(df.iloc[[0]])
 
 if like_button:
     st.session_state.a_counter += 1
