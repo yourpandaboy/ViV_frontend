@@ -171,7 +171,7 @@ if start_execution and len(tmp_arr) >= 4:
         st.success('Here are your potential matches! View fullscreen to expand! 😉')
         st.image('images/WG8T.gif', width= 250)
         st.table(result)
-        new = result.reset_index()
+        new = result.reset_index().drop("index", axis =1)
         st.write(new)
         st.subheader("Want to browse your matches interactively? 😎 Click below! ⬇️")
         interactive_button = st.button("Interactive View!")
