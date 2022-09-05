@@ -171,6 +171,25 @@ if start_execution and len(tmp_arr) >= 4:
         st.image('images/WG8T.gif', width= 250)
         st.table(result)
 
+st.subheader("Want to browse your matches interactively? 😎 Click below! ⬇️")
+
+interactive_button = st.button("Interactive View!")
+
+if "a_counter" not in st.session_state:
+    st.session_state["a_counter"] = 0
+
+if interactive_button:
+    st.table(result.iloc[[0]])
+    like_button = st.button("Like")
+    pass_button = st.button("Pass")
+    if like_button:
+        st.session_state.a_counter += 1
+        st.table(result.iloc[[st.session_state.a_counter]])
+    if pass_button:
+        st.session_state.a_counter += 1
+        st.table(result.iloc[[st.session_state.a_counter]])
+
+
     #AgGrid(result)
 
 # filtered_df = matches_df[(matches_df['sex'] == d) &( matches_df['age'].between(a,b)) & (matches_df['status'] == c.lower())]

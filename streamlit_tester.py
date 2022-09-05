@@ -51,19 +51,28 @@ st.write(st.session_state.liked)
 start_button = st.button("See my matches!")
 like_button = st.button("Like")
 pass_button = st.button("Pass")
+end_button = st.button("See my matches")
 #pass_button, col2, like_button = st.columns([1,1,1])
+
+#blank_df = pd.DataFrame(columns=['Profile', 'Age', 'Location', 'Status'])
 
 if start_button:
     st.table(df.iloc[[0]])
 
 if like_button:
     st.session_state.a_counter += 1
-    st.table(df.iloc[[st.session_state.a_counter]])
+    ##blank_df.append(df.iloc[st.session_state.a_counter], ignore_index= True)
     st.session_state.liked = pd.concat([st.session_state.liked, df.iloc[[st.session_state.a_counter]]], axis=0)
+    #st.session_state.mdf = pd.concat([st.session_state.mdf, df_new], axis=0)
+    st.table(df.iloc[[st.session_state.a_counter]])
+
 
 if pass_button:
     st.session_state.a_counter += 1
     st.table(df.iloc[[st.session_state.a_counter]])
+
+if end_button:
+    trial = st.button("Trial")
 
 def like():
     #st.session_state.liked = pd.concat([st.session_state.liked, df.iloc[[0]]], axis=0)
